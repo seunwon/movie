@@ -1,3 +1,5 @@
+//첫 시작 페이지
+
 import React from "react";
 import styled from "styled-components"
 import Username from './Username'

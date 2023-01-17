@@ -1,32 +1,37 @@
+//별점 저장
+
 import * as React from 'react';
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
+import { useState } from 'react';
+
 
 function HoverRating() {
 
-  const [value, setValue] = React.useState(1.5);
+  const [value, setValue] = useState(1.5);
+  const movieid = parseInt((window.location.href).toString().replace("http://localhost:3000/testing/",""))
 
-  let movieid=parseInt((window.location.href).toString().replace("http://localhost:3000/testing/",""))
+  const onChange = (event) => {
+    setValue(event.target.value);
+  }
+
+  window.localStorage.setItem(movieid, value);
   console.log(movieid)
-
-  React.useEffect(() => {
-    window.localStorage.setItem({movieid}, value)
-  },[movieid])
-  
   return (
     <Box>
       <Rating
         name="hover-feedback"
         value={value}
         precision={0.5}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
+        onChange={onChange}
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
       />
     </Box>
-  );
+  )
+
+
+  
 }
 
 export default HoverRating;

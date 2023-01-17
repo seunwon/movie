@@ -1,3 +1,5 @@
+//사용자 이름 받고 변경 시 저장값 새로고침+버튼
+
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import styled from "styled-components"
@@ -49,6 +51,7 @@ const StorageName = () => {
 
     const onChange = (e) => {
       setUserName(e.target.value);
+      localStorage.clear();
     };
 
     return (

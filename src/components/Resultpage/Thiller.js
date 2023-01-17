@@ -1,16 +1,6 @@
-//로맨스 장르
-
 import React from "react";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
-
-/*
-const a = window.localStorage.getItem('1');
-const b = window.localStorage.getItem('2');
-const c = window.localStorage.getItem('3');
-const d = window.localStorage.getItem('4');
-
-if/else 문 이용*/
 
 const Blank= styled.div`
 padding-bottom: 50px;
@@ -84,37 +74,35 @@ function LastPage({userName}) {
           
             <h3>
                {window.localStorage.getItem('userName')} 
-                님은 로맨스 장르를 좋아하네요! <br />
-               로맨스 장르를 좋아하는 당신에게 영화를 추천해 줄게요!
+                님은 스릴러 장르를 좋아하네요! <br />
+               스릴러 장르를 좋아하는 당신에게 영화를 추천해 줄게요!
               
             </h3>
         </HeadBlock>
 
         <ExtraMovie>
             <Movie1>
-                <img width="150px" height="212px" alt="어바웃타임 포스터"
-                     src="https://movie-phinf.pstatic.net/20131115_243/1384498185621awKv1_JPEG/movie_image.jpg" />
-                <h3>어바웃 타임(2013)</h3>
-                <p>♥ 평점 9.30 ★★★★★</p>
-                <p><a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=92075#" style={{color:'inherit',textDecoration:'inherit'}}>♥ 어바웃 타임 더 알아보기!</a></p>
+            <img width="150px" height="212px" alt="기생충 포스터"
+                     src="https://movie-phinf.pstatic.net/20190528_36/1559024198386YVTEw_JPEG/movie_image.jpg?type=m203_290_2" />
+                <h3>기생충(2019)</h3>
+                <p>♥ 평점 9.07 ★★★★★</p>
+                <p><a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=161967">♥ 기생충 더 알아보기!</a></p>
                 <p>♥ 어디서 볼 수 있나요?<br /></p>
-                        <img width="45px" height="45px"
-                             alt="넷플릭스"
-                             src="https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI" />
-                        <img width="45px" height="45px"
-                             alt="왓챠"
-                             src="https://play-lh.googleusercontent.com/vAkKvTtE8kdb0MWWxOVaqYVf0_suB-WMnfCR1MslBsGjhI49dAfF1IxcnhtpL3PnjVY" />
-                        <img width="45px" height="45px"
-                             alt="웨이브"
-                             src="https://play-lh.googleusercontent.com/nPc-sm_G026svFhkh8A1YQvoyt1gaPc-cmRMfmNjgZy0XGLsB2PUpaRHfKc6nVYkzA" />                    
+                <img width="45px" height="45px"
+                     alt="왓챠"
+                     src="https://play-lh.googleusercontent.com/vAkKvTtE8kdb0MWWxOVaqYVf0_suB-WMnfCR1MslBsGjhI49dAfF1IxcnhtpL3PnjVY" />
+                <img width="45px" height="45px"
+                     alt="티빙"
+                     src="https://play-lh.googleusercontent.com/eG3T5rqaV3ifl3MKV0fMi4V161wdhghpmqOMq-KYXOCN7Qy98yZhSsIj1gUBQ6YQqRg" />
             </Movie1>
                 
             <Movie2>
-                <img width="150px" height="212px" alt="나의 소녀시대 포스터"
-                     src="https://movie-phinf.pstatic.net/20200810_138/1597023139385oXMsi_JPEG/movie_image.jpg"  />
-                <h3>나의 소녀시대(2016)</h3>
-                <p>♥ 평점 9.13 ★★★★★</p>
-                <p><a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=142691" style={{color:'inherit',textDecoration:'inherit'}}>♥ 나의 소녀시대 더 알아보기!</a></p>
+            
+                <img width="150px" height="212px" alt="추격자 포스터"
+                     src="https://movie-phinf.pstatic.net/20111223_156/1324566721937R1fPE_JPEG/movie_image.jpg?type=m203_290_2" />
+                <h3>추격자(2008)</h3>
+                <p>♥ 평점 9.09 ★★★★★</p>
+                <p><a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=68695">♥ 추격자 더 알아보기!</a></p>
                 <p>♥ 어디서 볼 수 있나요?<br /></p>
                 <img width="45px" height="45px"
                      alt="넷플릭스"
@@ -123,17 +111,24 @@ function LastPage({userName}) {
                      alt="왓챠"
                      src="https://play-lh.googleusercontent.com/vAkKvTtE8kdb0MWWxOVaqYVf0_suB-WMnfCR1MslBsGjhI49dAfF1IxcnhtpL3PnjVY" />
                 <img width="45px" height="45px"
-                     alt="웨이브"
-                     src="https://play-lh.googleusercontent.com/nPc-sm_G026svFhkh8A1YQvoyt1gaPc-cmRMfmNjgZy0XGLsB2PUpaRHfKc6nVYkzA" /> 
+                     alt="티빙"
+                     src="https://play-lh.googleusercontent.com/eG3T5rqaV3ifl3MKV0fMi4V161wdhghpmqOMq-KYXOCN7Qy98yZhSsIj1gUBQ6YQqRg" />
+            
             </Movie2>
 
             <Movie3>
-                <img width="150px" height="212px" alt="헤어질 결심 포스터"
-                     src="https://movie-phinf.pstatic.net/20220607_129/16545872892918GA4h_JPEG/movie_image.jpg" />
-                <h3>헤어질 결심(2022)</h3>
-                <p>♥ 평점 8.95 ★★★★☆</p>
-                <p><a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=198413" style={{color:'inherit',textDecoration:'inherit'}}>♥ 헤어질 결심 더 알아보기!</a></p>
+            <img width="150px" height="212px" alt="끝까지 간다 포스터"
+                     src="https://movie-phinf.pstatic.net/20140424_211/1398315678038omnHU_JPEG/movie_image.jpg?type=m203_290_2" />
+                <h3>끝까지 간다(2014)</h3>
+                <p>♥ 평점 8.83 ★★★★☆</p>
+                <p><a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=109778">♥ 끝까지 간다 더 알아보기!</a></p>
                 <p>♥ 어디서 볼 수 있나요?<br /></p>
+                <img width="45px" height="45px"
+                     alt="넷플릭스"
+                     src="https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI" />
+                <img width="45px" height="45px"
+                     alt="왓챠"
+                     src="https://play-lh.googleusercontent.com/vAkKvTtE8kdb0MWWxOVaqYVf0_suB-WMnfCR1MslBsGjhI49dAfF1IxcnhtpL3PnjVY" />
                 <img width="45px" height="45px"
                      alt="티빙"
                      src="https://play-lh.googleusercontent.com/eG3T5rqaV3ifl3MKV0fMi4V161wdhghpmqOMq-KYXOCN7Qy98yZhSsIj1gUBQ6YQqRg" />

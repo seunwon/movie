@@ -10,8 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/testing" element={<Qpage />} />
-        <Route path="/result" element={<Result />} />
         <Route path="/testing/:linkid" element={<QnA />} />
+        <Route path="/result" element={<Result />} />
       </Routes> 
 
     </>

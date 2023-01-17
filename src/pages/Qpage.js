@@ -1,3 +1,5 @@
+//설문조사 전 페이지
+
 import { createGlobalStyle } from 'styled-components';
 import Header from "../components/Header";
 import Template from "../components/Template";

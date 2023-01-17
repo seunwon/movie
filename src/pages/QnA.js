@@ -47,49 +47,67 @@ const Middle = styled.div`
 
 const movies = {
     1:{
-        id: 1,
+        linkid: 1,
         title: '헤어질 결심',
-        genre: 'romance'
+        img: "https://www.themoviedb.org/t/p/w1280/yGXMia1VNEovB7014ldTHwT1r50.jpg" ,
+        genre1: 'romance',
+        genre2: 'thriller'
     },
     2:{
         linkid: 2,
-        title: '극한직업',
-        genre: 'comedy'
+        title: '살인의 추억',
+        img: "https://www.themoviedb.org/t/p/w1280/sujAihJHmNMfeMNQ004KYIPvrGA.jpg" ,
+        genre1: 'thriller',
+        genre2: 'action'
     },
     3:{
         linkid: 3,
-        title: '인터스텔라',
-        genre: 'sf'
+        title: '전우치',
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/48QvXMsVeNlEEL55jUixVnX09KS.jpg" ,
+        genre1: 'action',
+        genre2: 'fantasy'
     },
     4:{
         linkid: 4,
-        title: '전우치',
-        genre: 'action'
+        title: '겨울왕국',
+        img: "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/nelAGS4rcZm2Qyuy3TSNWgU2mEL.jpg",
+        genre1: 'romance',
+        genre2: 'fantasy'
     },
     5:{
         linkid: 5,
-        title: '명량',
-        genre: 'action'
+        title: '범죄도시',
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/A5MIbqxuQfQRtzGxg5UUTAxHfsM.jpg" ,
+        genre1: 'action',
+        genre2: 'comedy'
     },
     6:{
         linkid: 6,
-        title: '겨울왕국',
-        genre: 'fantasy'
+        title: '곡성',
+        genre1: 'fantasy',
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/k9AKtgRErXjz14lFHL2IJVCgwOT.jpg" ,
+        genre2: 'thriller'
     },
     7:{
         linkid: 7,
-        title: '어벤져스',
-        genre: 'action'
+        title: '이터널 션샤인',
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6HNRo7VYpvM5x5O921bEF2BG7f4.jpg" ,
+        genre1: 'romance',
+        genre2: 'fantasy'
     },
     8:{
         linkid: 8,
-        title: '기생충',
-        genre: 'thriller'
+        title: '엑시트',
+        img: "https://www.themoviedb.org/t/p/w1280/a3QQOKBvE1zkTm1pmiaUvKJHmak.jpg" ,
+        genre1: 'action',
+        genre2: 'comedy'
     },
     9:{
         linkid: 9,
-        title: '어바웃 타임',
-        genre: 'romance'
+        title: '뷰티 인사이드',
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uozXCzZ0QhoWLmpV5M3tCyidSEr.jpg" ,
+        genre1: 'romance',
+        genre2: 'fantasy'
     },
 };
 
@@ -113,8 +131,8 @@ const Movie = () => {
             {movieId ? (
                 <Middle>
                 <div>
-                <img width="150px" height="212px" alt="헤어질 결심 포스터"
-                     src="https://movie-phinf.pstatic.net/20220607_129/16545872892918GA4h_JPEG/movie_image.jpg" />
+                <img width="150px" height="212px" alt="포스터"
+                     src={movieId.img}/>
                     <h2>{movieId.title}</h2>
                     <Rating />
 
