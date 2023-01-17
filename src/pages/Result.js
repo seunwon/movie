@@ -1,11 +1,12 @@
 //결과 페이지
 import React from "react";
-import LastPage from "../components/LastPage";
+import LastPageAction from "../components/Resultpage/LastPageAction";
+import LastPageFantasy from "../components/Resultpage/LastPageFantasy";
+import LastPageRomance from "../components/Resultpage/LastPageRomance";
+import LastPageThriller from "../components/Resultpage/LastPageThriller";
+
 
 function Result() {
-
-  /*
-*/
 
     const a = window.localStorage.getItem('1');
     const b = window.localStorage.getItem('2');
@@ -20,20 +21,21 @@ function Result() {
     const romance = (Number(a)+Number(d)+Number (g)+ Number(i))/4;
     const thriller = (Number(a)+Number(b)+Number (f))/3;
     const action = (Number(b)+Number(c)+Number (e)+ Number(h))/4;
-    const comedy = (Number(b)+Number(e)+Number (h))/4;
     const fantasy = (Number(d)+Number(f)+Number (g)+ Number(i))/4;
 
     console.log(romance);
     console.log(thriller);
     console.log(fantasy);
     console.log(action);
-    console.log(comedy);
 
-    if(romance >> thriller && romance >> action && romance >> comedy && romance >> fantasy ){return <LastPage />;}
-    if(thriller >> romance && thriller >> action && thriller >> comedy && thriller >> fantasy ){return <LastPage />;}
-    if(action >> thriller && action >> romance && action >> comedy && action >> fantasy ){return <LastPage />;}
-    if(comedy >> thriller && comedy >> action && comedy >> romance && comedy >> fantasy ){return <LastPage />;}
-    if(fantasy >> thriller && fantasy >> action && fantasy >> romance && fantasy >> comedy ){return <LastPage />;}
+
+    if(romance > thriller && romance > action && romance > fantasy ){ return <LastPageRomance /> }
+    else if(thriller > romance && thriller > action && thriller > fantasy ){ return <LastPageThriller></LastPageThriller>}
+    else if (action > thriller && action > romance && action > fantasy ){ return <LastPageAction /> }
+    else if(fantasy > thriller && fantasy > action && fantasy > romance ){ return <LastPageFantasy /> }
+    
   };
   
   export default Result;
+
+  /*    */
