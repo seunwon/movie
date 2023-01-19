@@ -10,7 +10,7 @@ import { useState } from 'react';
 function HoverRating() {
 
   const [value, setValue] = useState(1.5);
-  const movieid = parseInt((window.location.href).toString().replace("http://localhost:3000/testing/",""))
+  const movieid = parseInt((window.location.href).toString().replace("https://cosmos-movie22.netlify.app/testing/",""))
 
   const onChange = (event) => {
     setValue(event.target.value);
