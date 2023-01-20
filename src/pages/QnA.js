@@ -137,12 +137,12 @@ const Movie = () => {
                     <Rating />
 
                     <button onClick={() => {
-                        const a = "https://cosmos-movie22.netlify.app/testing/"+(parseInt((window.location.href).toString().replace("https://cosmos-movie22.netlify.app/testing/",""))-1).toString();
+                        const a = "http://localhost:3000/testing/"+(parseInt((window.location.href).toString().replace("https://cosmos-movie22.netlify.app/testing/",""))-1).toString();
                         window.location.href = a
                     }}>이전 영화</button>
                     
                     <button onClick={() => {
-                        const a = "https://cosmos-movie22.netlify.app/testing/"+(parseInt((window.location.href).toString().replace("https://cosmos-movie22.netlify.app/testing/",""))+1).toString();
+                        const a = "http://localhost:3000/testing/"+(parseInt((window.location.href).toString().replace("https://cosmos-movie22.netlify.app/testing/",""))+1).toString();
                         console.log(a);
                         window.location.href = a
                     }}>다음 영화</button>
