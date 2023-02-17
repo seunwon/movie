@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import Template from "../components/Template";
 import { createGlobalStyle } from 'styled-components';
+import { useNavigate } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -47,63 +48,63 @@ const Middle = styled.div`
 
 const movies = {
     1:{
-        linkid: 1,
+        nextid: 2,
         title: '헤어질 결심',
         img: "https://www.themoviedb.org/t/p/w1280/yGXMia1VNEovB7014ldTHwT1r50.jpg" ,
         genre1: 'romance',
         genre2: 'thriller'
     },
     2:{
-        linkid: 2,
+        nextid: 3,
         title: '살인의 추억',
         img: "https://www.themoviedb.org/t/p/w1280/sujAihJHmNMfeMNQ004KYIPvrGA.jpg" ,
         genre1: 'thriller',
         genre2: 'action'
     },
     3:{
-        linkid: 3,
+        nextid: 4,
         title: '전우치',
         img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/48QvXMsVeNlEEL55jUixVnX09KS.jpg" ,
         genre1: 'action',
         genre2: 'fantasy'
     },
     4:{
-        linkid: 4,
+        nextid: 5,
         title: '겨울왕국',
         img: "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/nelAGS4rcZm2Qyuy3TSNWgU2mEL.jpg",
         genre1: 'romance',
         genre2: 'fantasy'
     },
     5:{
-        linkid: 5,
+        nextid: 6,
         title: '범죄도시',
         img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/A5MIbqxuQfQRtzGxg5UUTAxHfsM.jpg" ,
         genre1: 'action',
         genre2: 'comedy'
     },
     6:{
-        linkid: 6,
+        nextid: 7,
         title: '곡성',
         genre1: 'fantasy',
         img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/k9AKtgRErXjz14lFHL2IJVCgwOT.jpg" ,
         genre2: 'thriller'
     },
     7:{
-        linkid: 7,
+        nextid: 8,
         title: '이터널 션샤인',
         img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6HNRo7VYpvM5x5O921bEF2BG7f4.jpg" ,
         genre1: 'romance',
         genre2: 'fantasy'
     },
     8:{
-        linkid: 8,
+        nextid: 9,
         title: '엑시트',
         img: "https://www.themoviedb.org/t/p/w1280/a3QQOKBvE1zkTm1pmiaUvKJHmak.jpg" ,
         genre1: 'action',
         genre2: 'comedy'
     },
     9:{
-        linkid: 9,
+        nextid: 'end',
         title: '뷰티 인사이드',
         img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uozXCzZ0QhoWLmpV5M3tCyidSEr.jpg" ,
         genre1: 'romance',
@@ -114,11 +115,14 @@ const movies = {
 
 const Movie = () => {
     
-    const id = useParams().linkid;
+    const id = useParams().Id;
     const movieId = movies[id];
 
+    const navigate = useNavigate();
+    const onClickMovie = nextid => navigate(`/testing/${movieId.nextid}`);
+    
     React.useEffect(()=>{
-        console.log(movieId);
+        console.log(movieId);     
     },[movieId])
 
 
@@ -135,17 +139,15 @@ const Movie = () => {
                      src={movieId.img}/>
                     <h2>{movieId.title}</h2>
                     <Rating />
+                
+                    <button onClick={() => {
+                        navigate(-1);
+                    }}>이전 영화</button>
 
                     <button onClick={() => {
-                        const a = "http://localhost:3000/testing/"+(parseInt((window.location.href).toString().replace("https://cosmos-movie22.netlify.app/testing/",""))-1).toString();
-                        window.location.href = a
-                    }}>이전 영화</button>
-                    
-                    <button onClick={() => {
-                        const a = "http://localhost:3000/testing/"+(parseInt((window.location.href).toString().replace("https://cosmos-movie22.netlify.app/testing/",""))+1).toString();
-                        console.log(a);
-                        window.location.href = a
+                        onClickMovie();
                     }}>다음 영화</button>
+
                 </div>
                 </Middle>
                 ) : (
@@ -155,7 +157,7 @@ const Movie = () => {
                     </div>
                     <Blank />
                     <button>
-                        <Link to="/result" style={{color:'inherit',textDecoration:'inherit'}} >결과 보기</Link>
+                        <Link to="/result" style={{color:'inherit',textDecoration:'inherit'}}>결과 보기</Link>
                     </button>
                 </Middle>
             )}
