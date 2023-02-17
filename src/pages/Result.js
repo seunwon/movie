@@ -33,9 +33,8 @@ function Result() {
     else if(thriller > romance && thriller > action && thriller > fantasy ){ return <LastPageThriller></LastPageThriller>}
     else if (action > thriller && action > romance && action > fantasy ){ return <LastPageAction /> }
     else if(fantasy > thriller && fantasy > action && fantasy > romance ){ return <LastPageFantasy /> }
+    else { return <h1>Error!</h1>}
     
   };
   
   export default Result;
-
-  /*    */
